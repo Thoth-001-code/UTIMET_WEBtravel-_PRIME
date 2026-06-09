@@ -1,0 +1,59 @@
+2026-06-09 17:54:39.270 +07:00 [INF] User profile is available. Using 'C:\Users\bruce\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-09 17:54:39.930 +07:00 [INF] Now listening on: https://localhost:7281
+2026-06-09 17:54:39.933 +07:00 [INF] Now listening on: http://localhost:5280
+2026-06-09 17:54:40.047 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-09 17:54:40.053 +07:00 [INF] Hosting environment: Development
+2026-06-09 17:54:40.057 +07:00 [INF] Content root path: D:\VANKIEPBATPHUC\TravelCompany\TravelCompany
+2026-06-09 17:54:42.049 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/swagger/index.html - null null
+2026-06-09 17:54:42.674 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/swagger/index.html - 200 null text/html;charset=utf-8 635.7889ms
+2026-06-09 17:54:42.720 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-09 17:54:42.720 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/_vs/browserLink - null null
+2026-06-09 17:54:42.739 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 20.0879ms
+2026-06-09 17:54:42.862 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/_vs/browserLink - 200 null text/javascript; charset=UTF-8 142.3171ms
+2026-06-09 17:54:42.900 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/swagger/v1/swagger.json - null null
+2026-06-09 17:54:42.954 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 54.5758ms
+2026-06-09 19:59:37.423 +07:00 [INF] User profile is available. Using 'C:\Users\bruce\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-09 19:59:37.784 +07:00 [WRN] The WebRootPath was not found: D:\VANKIEPBATPHUC\TravelCompany\TravelCompany\wwwroot. Static files may be unavailable.
+2026-06-09 19:59:38.014 +07:00 [INF] Now listening on: https://localhost:7281
+2026-06-09 19:59:38.015 +07:00 [INF] Now listening on: http://localhost:5280
+2026-06-09 19:59:38.097 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-09 19:59:38.099 +07:00 [INF] Hosting environment: Development
+2026-06-09 19:59:38.101 +07:00 [INF] Content root path: D:\VANKIEPBATPHUC\TravelCompany\TravelCompany
+2026-06-09 19:59:38.442 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/swagger/index.html - null null
+2026-06-09 19:59:38.818 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/swagger/index.html - 200 null text/html;charset=utf-8 426.0293ms
+2026-06-09 19:59:38.824 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-09 19:59:38.826 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/_vs/browserLink - null null
+2026-06-09 19:59:38.836 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 12.1476ms
+2026-06-09 19:59:38.886 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/_vs/browserLink - 200 null text/javascript; charset=UTF-8 62.0666ms
+2026-06-09 19:59:38.914 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/swagger/v1/swagger.json - null null
+2026-06-09 19:59:38.978 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 64.6966ms
+2026-06-09 20:03:45.838 +07:00 [INF] User profile is available. Using 'C:\Users\bruce\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-09 20:03:46.012 +07:00 [WRN] The WebRootPath was not found: D:\VANKIEPBATPHUC\TravelCompany\TravelCompany\wwwroot. Static files may be unavailable.
+2026-06-09 20:03:46.197 +07:00 [INF] Now listening on: https://localhost:7281
+2026-06-09 20:03:46.201 +07:00 [INF] Now listening on: http://localhost:5280
+2026-06-09 20:03:46.245 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-09 20:03:46.247 +07:00 [INF] Hosting environment: Development
+2026-06-09 20:03:46.251 +07:00 [INF] Content root path: D:\VANKIEPBATPHUC\TravelCompany\TravelCompany
+2026-06-09 20:03:46.523 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/swagger/index.html - null null
+2026-06-09 20:03:46.779 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/swagger/index.html - 200 null text/html;charset=utf-8 266.3849ms
+2026-06-09 20:03:46.798 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-09 20:03:46.799 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/_vs/browserLink - null null
+2026-06-09 20:03:46.810 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 12.0115ms
+2026-06-09 20:03:46.860 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/_vs/browserLink - 200 null text/javascript; charset=UTF-8 61.6183ms
+2026-06-09 20:03:46.885 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/swagger/v1/swagger.json - null null
+2026-06-09 20:03:46.931 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 45.9709ms
+2026-06-09 20:08:01.868 +07:00 [INF] User profile is available. Using 'C:\Users\bruce\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-09 20:08:02.240 +07:00 [WRN] The WebRootPath was not found: D:\VANKIEPBATPHUC\TravelCompany\TravelCompany\wwwroot. Static files may be unavailable.
+2026-06-09 20:08:02.543 +07:00 [INF] Now listening on: https://localhost:7281
+2026-06-09 20:08:02.544 +07:00 [INF] Now listening on: http://localhost:5280
+2026-06-09 20:08:02.629 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-09 20:08:02.632 +07:00 [INF] Hosting environment: Development
+2026-06-09 20:08:02.634 +07:00 [INF] Content root path: D:\VANKIEPBATPHUC\TravelCompany\TravelCompany
+2026-06-09 20:08:02.849 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/swagger/index.html - null null
+2026-06-09 20:08:03.198 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/swagger/index.html - 200 null text/html;charset=utf-8 360.6486ms
+2026-06-09 20:08:03.207 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/_vs/browserLink - null null
+2026-06-09 20:08:03.207 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-09 20:08:03.234 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 26.5494ms
+2026-06-09 20:08:03.265 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/_vs/browserLink - 200 null text/javascript; charset=UTF-8 58.3687ms
+2026-06-09 20:08:03.296 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7281/swagger/v1/swagger.json - null null
+2026-06-09 20:08:03.338 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7281/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 42.0191ms

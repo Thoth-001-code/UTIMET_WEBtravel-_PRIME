@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\VANKIEPBATPHUC\\TravelCompany\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A3C64931-CA09-63BE-373E-373CC05FA32E}|TravelCompany\\TravelCompany.csproj|d:\\vankiepbatphuc\\travelcompany\\travelcompany\\services\\implementations\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3C64931-CA09-63BE-373E-373CC05FA32E}|TravelCompany\\TravelCompany.csproj|solutionrelative:travelcompany\\services\\implementations\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3C64931-CA09-63BE-373E-373CC05FA32E}|TravelCompany\\TravelCompany.csproj|d:\\vankiepbatphuc\\travelcompany\\travelcompany\\validators\\booking\\bookingcreatedtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3C64931-CA09-63BE-373E-373CC05FA32E}|TravelCompany\\TravelCompany.csproj|solutionrelative:travelcompany\\validators\\booking\\bookingcreatedtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3C64931-CA09-63BE-373E-373CC05FA32E}|TravelCompany\\TravelCompany.csproj|d:\\vankiepbatphuc\\travelcompany\\travelcompany\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3C64931-CA09-63BE-373E-373CC05FA32E}|TravelCompany\\TravelCompany.csproj|solutionrelative:travelcompany\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3C64931-CA09-63BE-373E-373CC05FA32E}|TravelCompany\\TravelCompany.csproj|d:\\vankiepbatphuc\\travelcompany\\travelcompany\\middlewares\\globalexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3C64931-CA09-63BE-373E-373CC05FA32E}|TravelCompany\\TravelCompany.csproj|solutionrelative:travelcompany\\middlewares\\globalexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BookingService.cs",
+              "DocumentMoniker": "D:\\VANKIEPBATPHUC\\TravelCompany\\TravelCompany\\Services\\Implementations\\BookingService.cs",
+              "RelativeDocumentMoniker": "TravelCompany\\Services\\Implementations\\BookingService.cs",
+              "ToolTip": "D:\\VANKIEPBATPHUC\\TravelCompany\\TravelCompany\\Services\\Implementations\\BookingService.cs",
+              "RelativeToolTip": "TravelCompany\\Services\\Implementations\\BookingService.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAowE4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T10:39:21.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookingCreateDtoValidator.cs",
+              "DocumentMoniker": "D:\\VANKIEPBATPHUC\\TravelCompany\\TravelCompany\\Validators\\Booking\\BookingCreateDtoValidator.cs",
+              "RelativeDocumentMoniker": "TravelCompany\\Validators\\Booking\\BookingCreateDtoValidator.cs",
+              "ToolTip": "D:\\VANKIEPBATPHUC\\TravelCompany\\TravelCompany\\Validators\\Booking\\BookingCreateDtoValidator.cs",
+              "RelativeToolTip": "TravelCompany\\Validators\\Booking\\BookingCreateDtoValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T10:38:21.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\VANKIEPBATPHUC\\TravelCompany\\TravelCompany\\Program.cs",
+              "RelativeDocumentMoniker": "TravelCompany\\Program.cs",
+              "ToolTip": "D:\\VANKIEPBATPHUC\\TravelCompany\\TravelCompany\\Program.cs",
+              "RelativeToolTip": "TravelCompany\\Program.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAEBVwHgAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T10:37:45.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GlobalExceptionMiddleware.cs",
+              "DocumentMoniker": "D:\\VANKIEPBATPHUC\\TravelCompany\\TravelCompany\\Middlewares\\GlobalExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "TravelCompany\\Middlewares\\GlobalExceptionMiddleware.cs",
+              "ToolTip": "D:\\VANKIEPBATPHUC\\TravelCompany\\TravelCompany\\Middlewares\\GlobalExceptionMiddleware.cs",
+              "RelativeToolTip": "TravelCompany\\Middlewares\\GlobalExceptionMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T10:37:38.806Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
