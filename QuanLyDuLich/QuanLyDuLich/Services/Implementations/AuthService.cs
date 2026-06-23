@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -76,7 +76,7 @@ namespace QuanLyDuLich.Services.Servicess
             if (await _context.TaiKhoans.AnyAsync(tk => tk.Email == request.Email))
                 throw new InvalidOperationException("Email đã được sử dụng.");
 
-            // Tạo tài khoản
+            // Tạo tài khoản và khách hàng
             var taiKhoan = new TaiKhoan
             {
                 HoTen = request.HoTen,
@@ -87,18 +87,20 @@ namespace QuanLyDuLich.Services.Servicess
                 NgayTao = DateTime.Now
             };
 
-            _context.TaiKhoans.Add(taiKhoan);
-            await _context.SaveChangesAsync();
-
-            // Tạo khách hàng
             var khachHang = new KhachHang
             {
                 HoTen = request.HoTen,
                 SoDienThoai = request.SoDienThoai,
                 Email = request.Email,
-                MaTaiKhoan = taiKhoan.MaTaiKhoan,
-                NgayTao = DateTime.Now
+                NgayTao = DateTime.Now,
+                TaiKhoan = taiKhoan,
+                DiaChi = "",
+                LoaiKhach = "thuong",
+                GioiTinh = "",
+                NgaySinh = null
             };
+
+            _context.TaiKhoans.Add(taiKhoan);
             _context.KhachHangs.Add(khachHang);
             await _context.SaveChangesAsync();
 

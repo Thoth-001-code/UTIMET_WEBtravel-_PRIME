@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="card">
+        <h2 id="tour-form-title">Thêm Tour</h2>
+        <form id="tour-form">
+            <div class="form-group">
+                <label>Tên tour</label>
+                <input type="text" id="tenTour" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Mô tả</label>
+                <textarea id="moTa" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Giá</label>
+                <input type="number" id="gia" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Thời gian</label>
+                <input type="text" id="thoiGian" class="form-control" placeholder="Ví dụ: 3 ngày 2 đêm" required>
+            </div>
+            <div class="form-group">
+                <label>Điểm đến</label>
+                <input type="number" id="maDiemDen" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Hình ảnh</label>
+                <input type="file" id="hinhAnh" class="form-control" accept="image/*">
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">Lưu</button>
+                <button type="button" class="btn btn-warning" onclick="navigate('tours')">Hủy</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -591,19 +591,28 @@
         }
       }
     },
-    "/api/Schedules/by-tour/{tourId}": {
+    "/api/Schedules": {
       "get": {
         "tags": [
           "Schedules"
         ],
         "parameters": [
           {
-            "name": "tourId",
-            "in": "path",
-            "required": true,
+            "name": "page",
+            "in": "query",
             "schema": {
               "type": "integer",
-              "format": "int32"
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
             }
           }
         ],
@@ -612,9 +621,7 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/Schedules": {
+      },
       "post": {
         "tags": [
           "Schedules"
@@ -638,6 +645,29 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Schedules/by-tour/{tourId}": {
+      "get": {
+        "tags": [
+          "Schedules"
+        ],
+        "parameters": [
+          {
+            "name": "tourId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"

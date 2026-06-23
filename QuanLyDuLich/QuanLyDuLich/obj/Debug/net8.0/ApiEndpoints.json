@@ -373,6 +373,27 @@
   },
   {
     "ContainingType": "QuanLyDuLich.Controllers.SchedulesController",
+    "Method": "GetAllSchedules",
+    "RelativePath": "api/Schedules",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "QuanLyDuLich.Controllers.SchedulesController",
     "Method": "CreateSchedule",
     "RelativePath": "api/Schedules",
     "HttpMethod": "POST",

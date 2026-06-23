@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using QuanLyDuLich.Data;
 using QuanLyDuLich.Models.DTOs.Schedule;
+using QuanLyDuLich.Models.DTOs.Common;
 using QuanLyDuLich.Models.Entities;
 using QuanLyDuLich.Services.Interfaces;
 
@@ -27,6 +28,7 @@ namespace QuanLyDuLich.Services
                 {
                     MaLich = l.MaLich,
                     MaTour = l.MaTour ?? 0,
+                    TenTour = l.Tour.TenTour,
                     NgayKhoiHanh = l.NgayKhoiHanh,
                     NgayKetThuc = l.NgayKetThuc,
                     SoChoToiDa = l.SoChoToiDa,
@@ -35,6 +37,39 @@ namespace QuanLyDuLich.Services
                     TrangThai = l.TrangThai
                 })
                 .ToListAsync();
+        }
+
+        public async Task<PagedResult<ScheduleResponse>> GetAllSchedulesAsync(int page = 1, int pageSize = 10)
+        {
+            var query = _context.LichKhoiHanhs
+                .Include(l => l.Tour)
+                .AsQueryable();
+
+            var totalCount = await query.CountAsync();
+            var items = await query
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .Select(l => new ScheduleResponse
+                {
+                    MaLich = l.MaLich,
+                    MaTour = l.MaTour ?? 0,
+                    TenTour = l.Tour.TenTour,
+                    NgayKhoiHanh = l.NgayKhoiHanh,
+                    NgayKetThuc = l.NgayKetThuc,
+                    SoChoToiDa = l.SoChoToiDa,
+                    SoChoConLai = l.SoChoConLai,
+                    GiaTour = l.GiaTour,
+                    TrangThai = l.TrangThai
+                })
+                .ToListAsync();
+
+            return new PagedResult<ScheduleResponse>
+            {
+                PageIndex = page,
+                PageSize = pageSize,
+                TotalCount = totalCount,
+                Items = items
+            };
         }
 
         public async Task<ScheduleResponse> CreateScheduleAsync(ScheduleRequest request)

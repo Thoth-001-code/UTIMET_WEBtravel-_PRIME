@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using QuanLyDuLich.Data;
 using QuanLyDuLich.Models.DTOs.Dashboard;
 using QuanLyDuLich.Services.Interfaces;
@@ -19,17 +19,19 @@ namespace QuanLyDuLich.Services
 
         public async Task<DashboardStatsResponse> GetStatsAsync()
         {
-            var totalTours = await _context.Tours.CountAsync();
-            var totalCustomers = await _context.KhachHangs.CountAsync();
-            var totalRevenue = await _context.ThanhToans
+            var tongTour = await _context.Tours.CountAsync();
+            var tongKhachHang = await _context.KhachHangs.CountAsync();
+            var tongDoanhThu = await _context.ThanhToans
                 .Where(t => t.TrangThai == "thanh_cong")
                 .SumAsync(t => t.SoTien) ?? 0;
+            var tongDat = await _context.DatTours.CountAsync();
 
             return new DashboardStatsResponse
             {
-                TotalTours = totalTours,
-                TotalCustomers = totalCustomers,
-                TotalRevenue = totalRevenue
+                TongTour = tongTour,
+                TongDat = tongDat,
+                TongDoanhThu = tongDoanhThu,
+                TongKhachHang = tongKhachHang
             };
         }
 

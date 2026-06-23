@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using QuanLyDuLich.Models.DTOs.Schedule;
@@ -16,6 +16,14 @@ namespace QuanLyDuLich.Controllers
         public SchedulesController(IScheduleService scheduleService)
         {
             _scheduleService = scheduleService;
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "quan_tri, quan_ly")]
+        public async Task<IActionResult> GetAllSchedules([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        {
+            var result = await _scheduleService.GetAllSchedulesAsync(page, pageSize);
+            return Ok(result);
         }
 
         [HttpGet("by-tour/{tourId}")]

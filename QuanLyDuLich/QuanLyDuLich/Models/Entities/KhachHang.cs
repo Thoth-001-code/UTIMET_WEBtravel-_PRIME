@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -34,11 +34,11 @@ namespace QuanLyDuLich.Models.Entities
 
         [Column("DiaChi")]
         [StringLength(200)]
-        public string DiaChi { get; set; }
+        public string? DiaChi { get; set; }
 
         [Column("LoaiKhach")]
         [StringLength(20)]
-        public string LoaiKhach { get; set; }
+        public string? LoaiKhach { get; set; }
 
         [Column("MaTaiKhoan")]
         public int? MaTaiKhoan { get; set; }

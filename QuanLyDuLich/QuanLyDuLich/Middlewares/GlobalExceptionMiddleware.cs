@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -39,23 +39,28 @@ namespace QuanLyDuLich.Middlewares
 
             // Mặc định là 500 Internal Server Error
             var statusCode = (int)HttpStatusCode.InternalServerError;
-            var message = "An error occurred while processing your request.";
+            var message = exception.Message; // Always show actual message
+
+            // Get inner exception message if exists
+            var innerException = exception.InnerException;
+            while (innerException != null)
+            {
+                message += " | Inner: " + innerException.Message;
+                innerException = innerException.InnerException;
+            }
 
             // Có thể tùy chỉnh status code và message dựa trên loại exception
             if (exception is UnauthorizedAccessException)
             {
                 statusCode = (int)HttpStatusCode.Unauthorized;
-                message = exception.Message;
             }
             else if (exception is InvalidOperationException)
             {
                 statusCode = (int)HttpStatusCode.BadRequest;
-                message = exception.Message;
             }
             else if (exception is KeyNotFoundException)
             {
                 statusCode = (int)HttpStatusCode.NotFound;
-                message = exception.Message;
             }
             // Bạn có thể thêm các loại exception khác tùy ý
 

@@ -1,9 +1,10 @@
-﻿namespace QuanLyDuLich.Models.DTOs.Dashboard
+namespace QuanLyDuLich.Models.DTOs.Dashboard
 {
     public class DashboardStatsResponse
     {
-        public int TotalTours { get; set; }
-        public int TotalCustomers { get; set; }
-        public decimal TotalRevenue { get; set; }
+        public int TongTour { get; set; }
+        public int TongDat { get; set; }
+        public decimal TongDoanhThu { get; set; }
+        public int TongKhachHang { get; set; }
     }
 }
