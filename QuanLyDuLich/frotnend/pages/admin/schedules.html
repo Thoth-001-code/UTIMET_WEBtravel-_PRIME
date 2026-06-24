@@ -1,20 +1,74 @@
-<div class="container">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2>Quản lý Lịch khởi hành</h2>
-        <button class="btn btn-primary" onclick="showScheduleForm()">Thêm Lịch</button>
+<div class="container" style="padding: 0;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
+        <h2 style="color: #1a472a; font-size: 1.8rem; margin: 0;">📅 Quản lý Lịch khởi hành</h2>
+        <button onclick="showScheduleForm()" style="background: #ff9800; color: white; border: none; padding: 12px 24px; border-radius: 30px; font-weight: 600; cursor: pointer; font-size: 1rem;">➕ Thêm Lịch</button>
     </div>
-    <div class="card">
-        <table id="schedule-table">
+    
+    <!-- Schedule Form -->
+    <div id="schedule-form-container" style="display: none; background: white; border-radius: 24px; padding: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); max-width: 800px; margin-bottom: 30px;">
+        <h3 id="schedule-form-title" style="color: #1a472a; font-size: 1.5rem; margin-bottom: 24px;">Thêm Lịch</h3>
+        <form id="schedule-form" style="display: flex; flex-direction: column; gap: 20px;">
+            <input type="hidden" id="editScheduleId">
+            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-weight: 600; color: #1a472a;">Tour</label>
+                <select id="maTour" name="maTour" class="form-control" required style="padding: 12px 16px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem;">
+                    <option value="">-- Chọn tour --</option>
+                </select>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-weight: 600; color: #1a472a;">Ngày khởi hành</label>
+                    <input type="datetime-local" id="ngayKhoiHanh" name="ngayKhoiHanh" class="form-control" required style="padding: 12px 16px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem;">
+                </div>
+                <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-weight: 600; color: #1a472a;">Ngày kết thúc</label>
+                    <input type="datetime-local" id="ngayKetThuc" name="ngayKetThuc" class="form-control" required style="padding: 12px 16px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem;">
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-weight: 600; color: #1a472a;">Số chỗ tối đa</label>
+                    <input type="number" id="soChoToiDa" name="soChoToiDa" class="form-control" required style="padding: 12px 16px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem;">
+                </div>
+                <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-weight: 600; color: #1a472a;">Giá tour</label>
+                    <input type="number" id="giaTour" name="giaTour" class="form-control" style="padding: 12px 16px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem;">
+                </div>
+            </div>
+            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-weight: 600; color: #1a472a;">Trạng thái</label>
+                <select id="trangThai" name="trangThai" class="form-control" style="padding: 12px 16px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem;">
+                    <option value="sap_khoi_han">Sắp khởi hành</option>
+                    <option value="dang_chay">Đang chạy</option>
+                    <option value="hoan_thanh">Hoàn thành</option>
+                    <option value="da_huy">Đã hủy</option>
+                </select>
+            </div>
+            <div style="display: flex; gap: 12px;">
+                <button type="submit" style="flex: 1; background: linear-gradient(135deg, #1e5a88, #144d74); color: white; border: none; padding: 12px 24px; border-radius: 30px; font-weight: 700; cursor: pointer; font-size: 1rem;">💾 Lưu</button>
+                <button type="button" onclick="hideScheduleForm()" style="flex: 1; background: #ddd; color: #333; border: none; padding: 12px 24px; border-radius: 30px; font-weight: 700; cursor: pointer; font-size: 1rem;">❌ Hủy</button>
+            </div>
+        </form>
+    </div>
+    
+    <div style="background: white; border-radius: 24px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); overflow-x: auto;">
+        <table id="schedule-table" style="width: 100%; border-collapse: collapse;">
             <thead>
-                <tr>
-                    <th>Mã</th>
-                    <th>Tour</th>
-                    <th>Ngày khởi hành</th>
-                    <th>Số chỗ</th>
-                    <th>Hành động</th>
+                <tr style="background: #f5f7f0;">
+                    <th style="padding: 12px; text-align: left; color: #1a472a; border-radius: 10px 0 0 10px;">Mã</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a;">Tour</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a;">Ngày khởi hành</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a;">Ngày kết thúc</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a;">Số chỗ tối đa</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a;">Số chỗ còn lại</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a;">Giá</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a;">Trạng thái</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a; border-radius: 0 10px 10px 0;">Hành động</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
     </div>
+    
+    <div id="schedule-pagination" style="display: flex; gap: 10px; justify-content: center; align-items: center; margin-top: 24px;"></div>
 </div>

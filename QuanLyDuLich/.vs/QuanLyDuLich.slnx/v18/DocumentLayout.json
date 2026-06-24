@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "D:\\VANKIEPBATPHUC\\QuanLyDuLich\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AC8E2C7C-8960-C043-8ED1-DC6E8A6B691E}|QuanLyDuLich\\QuanLyDuLich.csproj|d:\\vankiepbatphuc\\quanlydulich\\quanlydulich\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC8E2C7C-8960-C043-8ED1-DC6E8A6B691E}|QuanLyDuLich\\QuanLyDuLich.csproj|solutionrelative:quanlydulich\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8E2C7C-8960-C043-8ED1-DC6E8A6B691E}|QuanLyDuLich\\QuanLyDuLich.csproj|d:\\vankiepbatphuc\\quanlydulich\\quanlydulich\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AC8E2C7C-8960-C043-8ED1-DC6E8A6B691E}|QuanLyDuLich\\QuanLyDuLich.csproj|solutionrelative:quanlydulich\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AC8E2C7C-8960-C043-8ED1-DC6E8A6B691E}|QuanLyDuLich\\QuanLyDuLich.csproj|d:\\vankiepbatphuc\\quanlydulich\\quanlydulich\\controllers\\diemdencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AC8E2C7C-8960-C043-8ED1-DC6E8A6B691E}|QuanLyDuLich\\QuanLyDuLich.csproj|solutionrelative:quanlydulich\\controllers\\diemdencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AC8E2C7C-8960-C043-8ED1-DC6E8A6B691E}|QuanLyDuLich\\QuanLyDuLich.csproj|d:\\vankiepbatphuc\\quanlydulich\\quanlydulich\\controllers\\tourscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AC8E2C7C-8960-C043-8ED1-DC6E8A6B691E}|QuanLyDuLich\\QuanLyDuLich.csproj|solutionrelative:quanlydulich\\controllers\\tourscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8E2C7C-8960-C043-8ED1-DC6E8A6B691E}|QuanLyDuLich\\QuanLyDuLich.csproj|d:\\vankiepbatphuc\\quanlydulich\\quanlydulich\\migrations\\20260624063801_f6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC8E2C7C-8960-C043-8ED1-DC6E8A6B691E}|QuanLyDuLich\\QuanLyDuLich.csproj|solutionrelative:quanlydulich\\migrations\\20260624063801_f6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,19 +39,55 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "DbSeeder.cs",
+              "DocumentMoniker": "D:\\VANKIEPBATPHUC\\QuanLyDuLich\\QuanLyDuLich\\Data\\DbSeeder.cs",
+              "RelativeDocumentMoniker": "QuanLyDuLich\\Data\\DbSeeder.cs",
+              "ToolTip": "D:\\VANKIEPBATPHUC\\QuanLyDuLich\\QuanLyDuLich\\Data\\DbSeeder.cs",
+              "RelativeToolTip": "QuanLyDuLich\\Data\\DbSeeder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T06:39:10.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20260624063801_f6.cs",
+              "DocumentMoniker": "D:\\VANKIEPBATPHUC\\QuanLyDuLich\\QuanLyDuLich\\Migrations\\20260624063801_f6.cs",
+              "RelativeDocumentMoniker": "QuanLyDuLich\\Migrations\\20260624063801_f6.cs",
+              "ToolTip": "D:\\VANKIEPBATPHUC\\QuanLyDuLich\\QuanLyDuLich\\Migrations\\20260624063801_f6.cs",
+              "RelativeToolTip": "QuanLyDuLich\\Migrations\\20260624063801_f6.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowBkAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T06:38:02.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\VANKIEPBATPHUC\\QuanLyDuLich\\QuanLyDuLich\\appsettings.json",
+              "RelativeDocumentMoniker": "QuanLyDuLich\\appsettings.json",
+              "ToolTip": "D:\\VANKIEPBATPHUC\\QuanLyDuLich\\QuanLyDuLich\\appsettings.json",
+              "RelativeToolTip": "QuanLyDuLich\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-24T06:37:16.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "DiemDenController.cs",
               "DocumentMoniker": "D:\\VANKIEPBATPHUC\\QuanLyDuLich\\QuanLyDuLich\\Controllers\\DiemDenController.cs",
               "RelativeDocumentMoniker": "QuanLyDuLich\\Controllers\\DiemDenController.cs",
               "ToolTip": "D:\\VANKIEPBATPHUC\\QuanLyDuLich\\QuanLyDuLich\\Controllers\\DiemDenController.cs",
               "RelativeToolTip": "QuanLyDuLich\\Controllers\\DiemDenController.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAgwDUAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T15:54:59.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-23T15:54:59.738Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ToursController.cs",
               "DocumentMoniker": "D:\\VANKIEPBATPHUC\\QuanLyDuLich\\QuanLyDuLich\\Controllers\\ToursController.cs",
               "RelativeDocumentMoniker": "QuanLyDuLich\\Controllers\\ToursController.cs",

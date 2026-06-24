@@ -1,8 +1,16 @@
 async function apiRequest(url, options = {}) {
     const token = localStorage.getItem('token');
-    const headers = {
-        ...options.headers,
-    };
+    const headers = {};
+
+    // Don't set Content-Type if it's FormData - the browser will set it with boundary
+    if (!(options.body instanceof FormData)) {
+        headers['Content-Type'] = 'application/json';
+    }
+
+    // Merge user headers
+    if (options.headers) {
+        Object.assign(headers, options.headers);
+    }
 
     if (token) {
         headers['Authorization'] = `Bearer ${token}`;

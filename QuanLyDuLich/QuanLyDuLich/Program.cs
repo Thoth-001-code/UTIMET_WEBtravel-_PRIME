@@ -105,6 +105,13 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+// Seed database
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    await DbSeeder.SeedData(context);
+}
+
 // 7. Middleware xử lý exception toàn cục (đặt đầu pipeline)
 app.UseMiddleware<GlobalExceptionMiddleware>();
 

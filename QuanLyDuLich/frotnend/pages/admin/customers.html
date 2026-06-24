@@ -1,21 +1,29 @@
-<div class="container">
-    <h2 class="mb-3">Quản lý Khách hàng</h2>
-    <div class="card mb-3">
-        <input type="text" id="search-customer" class="form-control" placeholder="Tìm kiếm khách hàng...">
+<div class="container" style="padding: 0;">
+    <h2 style="color: #1a472a; font-size: 1.8rem; margin-bottom: 24px;">👤 Quản lý Khách hàng</h2>
+    
+    <div style="background: white; border-radius: 20px; padding: 16px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <div class="search-wrapper" style="display: flex; gap: 10px;">
+            <div class="search-box" style="flex: 1;">
+                <span class="icon">🔍</span>
+                <input type="text" id="search-customer" placeholder="Tìm kiếm khách hàng...">
+            </div>
+        </div>
     </div>
-    <div class="card">
-        <table id="customer-table">
+    
+    <div style="background: white; border-radius: 24px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); overflow-x: auto;">
+        <table id="customer-table" style="width: 100%; border-collapse: collapse;">
             <thead>
-                <tr>
-                    <th>Mã</th>
-                    <th>Họ tên</th>
-                    <th>Email</th>
-                    <th>SĐT</th>
-                    <th>Hành động</th>
+                <tr style="background: #f5f7f0;">
+                    <th style="padding: 12px; text-align: left; color: #1a472a; border-radius: 10px 0 0 10px;">Mã</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a;">Họ tên</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a;">Email</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a;">SĐT</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a; border-radius: 0 10px 10px 0;">Địa chỉ</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
     </div>
-    <div id="customer-pagination" class="pagination"></div>
+    
+    <div id="customer-pagination" style="display: flex; gap: 10px; justify-content: center; align-items: center; margin-top: 24px;"></div>
 </div>

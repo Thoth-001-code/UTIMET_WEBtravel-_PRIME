@@ -1,16 +1,53 @@
-<div class="container">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2>Quản lý Điểm đến</h2>
-        <button class="btn btn-primary" onclick="showDestinationForm()">Thêm Điểm đến</button>
+<div class="container" style="padding: 0;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
+        <h2 style="color: #1a472a; font-size: 1.8rem; margin: 0;">📍 Quản lý Điểm đến</h2>
+        <button onclick="showDestinationForm()" style="background: #ff9800; color: white; border: none; padding: 12px 24px; border-radius: 30px; font-weight: 600; cursor: pointer; font-size: 1rem;">➕ Thêm Điểm đến</button>
     </div>
-    <div class="card">
-        <table id="destination-table">
+    
+    <!-- Destination Form -->
+    <div id="destination-form-container" style="display: none; background: white; border-radius: 24px; padding: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); max-width: 800px; margin-bottom: 30px;">
+        <h3 id="destination-form-title" style="color: #1a472a; font-size: 1.5rem; margin-bottom: 24px;">Thêm Điểm đến</h3>
+        <form id="destination-form" style="display: flex; flex-direction: column; gap: 20px;">
+            <input type="hidden" id="editDestinationId">
+            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-weight: 600; color: #1a472a;">Tên điểm đến</label>
+                <input type="text" id="tenDiemDen" name="tenDiemDen" class="form-control" required style="padding: 12px 16px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem;">
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-weight: 600; color: #1a472a;">Quốc gia</label>
+                    <input type="text" id="quocGia" name="quocGia" class="form-control" style="padding: 12px 16px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem;">
+                </div>
+                <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-weight: 600; color: #1a472a;">Thành phố</label>
+                    <input type="text" id="thanhPho" name="thanhPho" class="form-control" style="padding: 12px 16px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem;">
+                </div>
+            </div>
+            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-weight: 600; color: #1a472a;">Mô tả</label>
+                <textarea id="moTa" name="moTa" class="form-control" rows="4" style="padding: 12px 16px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem;"></textarea>
+            </div>
+            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-weight: 600; color: #1a472a;">Hình ảnh</label>
+                <input type="file" id="hinhAnhFile" name="hinhAnhFile" accept="image/*" class="form-control" style="padding: 12px 16px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem;">
+            </div>
+            <div style="display: flex; gap: 12px;">
+                <button type="submit" style="flex: 1; background: linear-gradient(135deg, #1e5a88, #144d74); color: white; border: none; padding: 12px 24px; border-radius: 30px; font-weight: 700; cursor: pointer; font-size: 1rem;">💾 Lưu</button>
+                <button type="button" onclick="hideDestinationForm()" style="flex: 1; background: #ddd; color: #333; border: none; padding: 12px 24px; border-radius: 30px; font-weight: 700; cursor: pointer; font-size: 1rem;">❌ Hủy</button>
+            </div>
+        </form>
+    </div>
+    
+    <div style="background: white; border-radius: 24px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); overflow-x: auto;">
+        <table id="destination-table" style="width: 100%; border-collapse: collapse;">
             <thead>
-                <tr>
-                    <th>Mã</th>
-                    <th>Tên điểm đến</th>
-                    <th>Mô tả</th>
-                    <th>Hành động</th>
+                <tr style="background: #f5f7f0;">
+                    <th style="padding: 12px; text-align: left; color: #1a472a; border-radius: 10px 0 0 10px;">Mã</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a;">Tên điểm đến</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a;">Quốc gia</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a;">Thành phố</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a;">Mô tả</th>
+                    <th style="padding: 12px; text-align: left; color: #1a472a; border-radius: 0 10px 10px 0;">Hành động</th>
                 </tr>
             </thead>
             <tbody></tbody>

@@ -1,5 +1,6 @@
 D:\VANKIEPBATPHUC\QuanLyDuLich\QuanLyDuLich\bin\Debug\net8.0\appsettings.Development.json
 D:\VANKIEPBATPHUC\QuanLyDuLich\QuanLyDuLich\bin\Debug\net8.0\appsettings.json
+D:\VANKIEPBATPHUC\QuanLyDuLich\QuanLyDuLich\bin\Debug\net8.0\QuanLyDuLich.staticwebassets.runtime.json
 D:\VANKIEPBATPHUC\QuanLyDuLich\QuanLyDuLich\bin\Debug\net8.0\QuanLyDuLich.staticwebassets.endpoints.json
 D:\VANKIEPBATPHUC\QuanLyDuLich\QuanLyDuLich\bin\Debug\net8.0\QuanLyDuLich.exe
 D:\VANKIEPBATPHUC\QuanLyDuLich\QuanLyDuLich\bin\Debug\net8.0\QuanLyDuLich.deps.json

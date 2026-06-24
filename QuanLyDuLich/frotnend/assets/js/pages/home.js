@@ -2,52 +2,89 @@ import { getTours } from '../services/tourService.js';
 import { formatMoney } from '../utils.js';
 import { navigate } from '../router.js';
 
-let currentPage = 1;
-let searchQuery = '';
+let currentTours = [];
 
 export async function initHome() {
-    await loadTours();
-    const searchInput = document.getElementById('search-tour-customer');
-    if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
-            searchQuery = e.target.value;
-            currentPage = 1;
-            loadTours();
-        });
-    }
+  await loadTours();
+  initFilters();
 }
 
 async function loadTours() {
-    const data = await getTours(searchQuery, currentPage);
-    const container = document.getElementById('tour-list-customer');
-    if (container) {
-        container.innerHTML = data.items.map(t => `
-            <div class="tour-card">
-                <img src="${t.hinhAnh || 'https://via.placeholder.com/400x200'}" alt="${t.tenTour}">
-                <div class="tour-card-content">
-                    <h3>${t.tenTour}</h3>
-                    <p style="color: #666; margin: 10px 0;">${t.moTa || ''}</p>
-                    <p style="font-size: 20px; font-weight: bold; color: #667eea;">${formatMoney(t.gia)}</p>
-                    <button class="btn btn-primary mt-3" onclick="viewTourDetail(${t.maTour})">Xem chi tiết</button>
-                </div>
-            </div>
-        `).join('');
-    }
-    const paginationContainer = document.getElementById('tour-pagination-customer');
-    if (paginationContainer) {
-        paginationContainer.innerHTML = `
-            <button class="btn btn-primary" ${currentPage <= 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">Trước</button>
-            <span style="padding: 10px;">Trang ${currentPage} / ${data.totalPages}</span>
-            <button class="btn btn-primary" ${currentPage >= data.totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">Sau</button>
-        `;
-    }
+  try {
+    const data = await getTours('', 1, 100);
+    currentTours = data.items || data || [];
+    renderTours();
+  } catch (error) {
+    console.error('Error loading tours:', error);
+  }
 }
 
-window.viewTourDetail = function(id) {
-    navigate('tour-detail', { id });
-};
+function formatPrice(price) {
+  return price ? price.toLocaleString('vi-VN') + 'đ' : '0đ';
+}
 
-window.changePage = function(page) {
-    currentPage = page;
-    loadTours();
-};
+function renderTours(filterDays = 'all') {
+  const tourGrid = document.getElementById('tourGrid');
+  const tourCount = document.getElementById('tourCount');
+  
+  if (!tourGrid) return;
+
+  let filtered = [...currentTours];
+
+  if (filterDays !== 'all') {
+    filtered = filtered.filter(t => t.soNgay === parseInt(filterDays));
+  }
+
+  if (tourCount) tourCount.innerText = filtered.length + ' tour';
+
+  if (filtered.length === 0) {
+    tourGrid.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:40px;">😢 Không có tour phù hợp</p>`;
+    return;
+  }
+
+  tourGrid.innerHTML = filtered
+    .map(tour => `
+      <div class="tour-card" data-id="${tour.maTour}">
+        <div class="tour-image" style="background-image: url('${tour.hinhAnh ? (tour.hinhAnh.startsWith('http') ? tour.hinhAnh : 'https://localhost:7077' + tour.hinhAnh) : 'https://via.placeholder.com/400x200'}')">
+          ${tour.trangThai === 'Hot' ? `<span class="tour-badge">🔥 ${tour.trangThai}</span>` : ''}
+        </div>
+        <div class="tour-content">
+          <h3 class="tour-title">${tour.tenTour || 'Tour không tên'}</h3>
+          <div class="tour-location">📍 ${tour.tenDiemDen || ''}</div>
+          <div class="tour-price">${formatPrice(tour.giaCoBan)} <small>/ người</small></div>
+          ${tour.soNgay ? `<div class="tour-days">📅 ${tour.soNgay} ngày ${tour.soNgay - 1} đêm</div>` : ''}
+          <p class="tour-description">${tour.moTa ? tour.moTa.substring(0, 70) + '...' : ''}</p>
+          <div class="tour-footer">
+            <button class="btn-detail" data-id="${tour.maTour}">🔍 Xem chi tiết</button>
+          </div>
+        </div>
+      </div>
+    `)
+    .join('');
+
+  document.querySelectorAll('.btn-detail').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const tourId = btn.getAttribute('data-id');
+      navigate('tour-detail', { id: tourId });
+    });
+  });
+
+  document.querySelectorAll('.tour-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const tourId = card.getAttribute('data-id');
+      navigate('tour-detail', { id: tourId });
+    });
+  });
+}
+
+function initFilters() {
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const days = btn.getAttribute('data-days');
+      renderTours(days);
+    });
+  });
+}

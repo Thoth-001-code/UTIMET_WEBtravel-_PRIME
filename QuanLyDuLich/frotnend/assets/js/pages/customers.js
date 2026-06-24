@@ -13,21 +13,30 @@ export async function initCustomers() {
 }
 
 async function loadCustomers() {
-    const data = await getCustomers(searchQuery, currentPage);
+    let data = { items: [], totalPages: 1 };
+    try {
+        data = await getCustomers(searchQuery, currentPage);
+    } catch (e) {
+        // Fallback fake data
+        data = { items: [], totalPages: 1 };
+    }
+    
     const tbody = document.querySelector('#customer-table tbody');
     tbody.innerHTML = data.items.map(c => `
-        <tr>
-            <td>${c.maKhachHang}</td>
-            <td>${c.hoTen}</td>
-            <td>${c.email}</td>
-            <td>${c.soDienThoai}</td>
-            <td></td>
+        <tr style="border-bottom: 1px solid #eee;">
+            <td style="padding: 12px;">${c.maKhachHang}</td>
+            <td style="padding: 12px;">${c.hoTen}</td>
+            <td style="padding: 12px;">${c.email}</td>
+            <td style="padding: 12px;">${c.soDienThoai || 'N/A'}</td>
+            <td style="padding: 12px;">${c.diaChi || 'N/A'}</td>
         </tr>
     `).join('');
-    document.getElementById('customer-pagination').innerHTML = `
-        <button class="btn btn-primary" ${currentPage <= 1 ? 'disabled' : ''} onclick="changeCustomerPage(${currentPage - 1})">Trước</button>
-        <span style="padding: 10px;">Trang ${currentPage} / ${data.totalPages}</span>
-        <button class="btn btn-primary" ${currentPage >= data.totalPages ? 'disabled' : ''} onclick="changeCustomerPage(${currentPage + 1})">Sau</button>
+    
+    const paginationContainer = document.getElementById('customer-pagination');
+    paginationContainer.innerHTML = `
+        <button ${currentPage <= 1 ? 'disabled' : ''} onclick="changeCustomerPage(${currentPage - 1})" style="background: white; border: 1px solid #ddd; padding: 10px 20px; border-radius: 20px; cursor: pointer; ${currentPage <=1 ? 'opacity:0.5; cursor:not-allowed' : ''};">← Trước</button>
+        <span style="padding: 10px; color: #1a472a; font-weight: 600;">Trang ${currentPage} / ${data.totalPages}</span>
+        <button ${currentPage >= data.totalPages ? 'disabled' : ''} onclick="changeCustomerPage(${currentPage + 1})" style="background: white; border: 1px solid #ddd; padding: 10px 20px; border-radius: 20px; cursor: pointer; ${currentPage >= data.totalPages ? 'opacity:0.5; cursor:not-allowed' : ''};">Sau →</button>
     `;
 }
 

@@ -6,8 +6,15 @@ let currentScheduleId = null;
 
 export async function initBookingForm(params) {
     currentScheduleId = params.scheduleId;
+    if (!currentScheduleId) {
+        alert('Không tìm thấy lịch khởi hành!');
+        navigate('home');
+        return;
+    }
+
     const user = await getCurrentUser();
     const form = document.getElementById('booking-form');
+    
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         try {
