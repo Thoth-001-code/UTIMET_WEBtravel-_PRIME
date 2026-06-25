@@ -1,0 +1,19 @@
+<div class="container" style="padding: 0;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
+        <h2 style="color: #1a472a; font-size: 1.8rem; margin: 0;">🧳 Quản lý Tour</h2>
+        <button onclick="showTourForm()" style="background: #ff9800; color: white; border: none; padding: 12px 24px; border-radius: 30px; font-weight: 600; cursor: pointer; font-size: 1rem;">➕ Thêm Tour</button>
+    </div>
+    
+    <div style="background: white; border-radius: 20px; padding: 16px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <div class="search-wrapper" style="display: flex; gap: 10px;">
+            <div class="search-box" style="flex: 1;">
+                <span class="icon">🔍</span>
+                <input type="text" id="search-tour" placeholder="Tìm kiếm tour...">
+            </div>
+        </div>
+    </div>
+    
+    <div id="tour-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 24px;"></div>
+    
+    <div id="tour-pagination" style="display: flex; gap: 10px; justify-content: center; align-items: center;"></div>
+</div>
